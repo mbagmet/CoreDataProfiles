@@ -23,6 +23,8 @@
 		D90AC90D28426D2800A75C4D /* ProfilePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC90C28426D2800A75C4D /* ProfilePresenterProtocol.swift */; };
 		D90AC910284270EA00A75C4D /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC90F284270EA00A75C4D /* UIColor+Ext.swift */; };
 		D90AC9132842724900A75C4D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D90AC9122842724900A75C4D /* SnapKit */; };
+		D90AC9162842888100A75C4D /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC9152842888100A75C4D /* DataProvider.swift */; };
+		D90AC91928428FCA00A75C4D /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC91828428FCA00A75C4D /* DataProviderProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		D90AC90A28425E2F00A75C4D /* RootPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenterProtocol.swift; sourceTree = "<group>"; };
 		D90AC90C28426D2800A75C4D /* ProfilePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenterProtocol.swift; sourceTree = "<group>"; };
 		D90AC90F284270EA00A75C4D /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		D90AC9152842888100A75C4D /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		D90AC91828428FCA00A75C4D /* DataProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 			children = (
 				D90AC8FA28424BA700A75C4D /* Presenters */,
 				D90AC8F928424B9D00A75C4D /* Views */,
+				D90AC9142842882900A75C4D /* Model */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -166,6 +171,23 @@
 				D90AC90F284270EA00A75C4D /* UIColor+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D90AC9142842882900A75C4D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D90AC9152842888100A75C4D /* DataProvider.swift */,
+				D90AC91728428FAD00A75C4D /* Protocols */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D90AC91728428FAD00A75C4D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D90AC91828428FCA00A75C4D /* DataProviderProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,8 +277,10 @@
 				D90AC906284251B800A75C4D /* RootPresenterDelegate.swift in Sources */,
 				D90AC8E02842445100A75C4D /* AppDelegate.swift in Sources */,
 				D90AC910284270EA00A75C4D /* UIColor+Ext.swift in Sources */,
+				D90AC91928428FCA00A75C4D /* DataProviderProtocol.swift in Sources */,
 				D90AC90D28426D2800A75C4D /* ProfilePresenterProtocol.swift in Sources */,
 				D90AC8E22842445100A75C4D /* SceneDelegate.swift in Sources */,
+				D90AC9162842888100A75C4D /* DataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

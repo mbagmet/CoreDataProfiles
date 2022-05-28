@@ -11,4 +11,8 @@ protocol RootPresenterProtocol {
     var delegate: RootPresenterDelegate? { get set }
     
     func setViewDelegate(delegate: RootPresenterDelegate)
+    func setupProfiles()
+    
+    func addProfile(name: String)
+    func deleteProfile(index: Int, completion: @escaping () -> ())
 }
