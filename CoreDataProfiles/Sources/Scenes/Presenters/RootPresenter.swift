@@ -33,7 +33,7 @@ class RootPresenter: RootPresenterProtocol {
     
     func addProfile(name: String) {
         dataProvider.addProfile(name: name) {
-            self.updateProfiles()
+            self.updateProfilesList()
             self.delegate?.reloadData()
         }
     }
@@ -41,13 +41,13 @@ class RootPresenter: RootPresenterProtocol {
     func deleteProfile(index: Int, completion: @escaping () -> ()) {
         guard let profile = dataProvider.profiles?[index] else { return }
         dataProvider.deleteProfile(profile: profile, index: index) {
-            self.updateProfiles()
+            self.updateProfilesList()
             completion()
         }
     }
     
     // MARK: - Private functions
-    private func updateProfiles() {
+    private func updateProfilesList() {
         guard let profiles = dataProvider.profiles else { return }
         self.profiles = profiles
     }

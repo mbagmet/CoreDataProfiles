@@ -21,7 +21,14 @@ class ProfileViewController: UIViewController {
         
         presenter.setViewDelegate(delegate: self)
 
-        // Do any additional setup after loading the view.
+        setupView()
+        print(presenter.profile)
+    }
+    
+    // MARK: - Settings
+    
+    private func setupView() {
+        view.backgroundColor = .tertiarySystemBackground | .systemBackground
     }
 }
 
