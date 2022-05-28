@@ -28,7 +28,7 @@ class RootViewController: UIViewController {
     
     private lazy var newProfileButton: UIButton = {
         let button = UIButton(type: .contactAdd)
-//        button.setTitle(" Добавить", for: .normal)
+        button.addTarget(self, action: #selector(newProfileButtonAction), for: .touchUpInside)
         
         return button
     }()
@@ -42,6 +42,7 @@ class RootViewController: UIViewController {
         
         // MARK: Presenter setup
         presenter.setViewDelegate(delegate: self)
+        presenter.setupProfiles()
         
         // MARK: Navigaiton Setup
         setupNavigation()
@@ -74,8 +75,8 @@ class RootViewController: UIViewController {
     private func setupLayout() {
         newProfileStackView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
+            make.leading.equalToSuperview().offset(Metric.leadingOffset)
+            make.trailing.equalToSuperview().offset(Metric.trailingOffset)
         }
         
         profilesTableView.snp.makeConstraints { make in
@@ -122,7 +123,21 @@ extension RootViewController {
 
 // MARK: - Presenter Delegate
 extension RootViewController: RootPresenterDelegate {
-    
+    func reloadData() {
+        self.profilesTableView.reloadData()
+    }
+}
+
+// MARK: - User Actions
+
+extension RootViewController {
+    @objc func newProfileButtonAction() {
+        guard let name = newProfileTextField.text else { return }
+        if name != "" {
+            presenter.addProfile(name: name)
+            newProfileTextField.text = nil
+        }
+    }
 }
 
 // MARK: - Data source, модель ячейки
@@ -131,12 +146,14 @@ extension RootViewController: RootPresenterDelegate {
 extension RootViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return presenter.profiles.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let profile = presenter.profiles[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "profilesTableCell", for: indexPath)
-        cell.textLabel?.text = "Название профиля"
+        cell.textLabel?.text = profile.value(forKeyPath: "name") as? String
         cell.accessoryType = .disclosureIndicator
 
         return cell
@@ -147,10 +164,10 @@ extension RootViewController: UITableViewDataSource {
 
 extension RootViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let character = presenter.model[indexPath.row]
-//        tableView.deselectRow(at: indexPath, animated: true)
-//
-//        delegate?.changeViewController(with: character)
+        let profile = presenter.profiles[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        //changeViewController(with: profile)
     }
 }
 
@@ -159,8 +176,9 @@ extension RootViewController {
 extension RootViewController {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            //objects.remove(at: indexPath.row)
-            //tableView.deleteRows(at: [indexPath], with: .fade)
+            presenter.deleteProfile(index: indexPath.row) {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
         }
     }
 }
@@ -170,6 +188,8 @@ extension RootViewController {
 extension RootViewController {
     enum Metric {
         static let stackViewSpacing: CGFloat = 12
+        static let leadingOffset: CGFloat = 20
+        static let trailingOffset: CGFloat = -20
     }
     
     enum Strings {
