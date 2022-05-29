@@ -6,12 +6,15 @@
 //
 
 import Foundation
+import CoreData
 
 class ProfilePresenter: ProfilePresenterProtocol {
     
     // MARK: - Properties
     
     weak var delegate: ProfilePresenterDelegate?
+    var profile: NSManagedObject?
+    var dataProvider = DataProvider()
     
     // MARK: - Configuration
     
@@ -20,4 +23,7 @@ class ProfilePresenter: ProfilePresenterProtocol {
     }
     
     // MARK: - Functions
+    func updateProfile() {
+        
+    }
 }

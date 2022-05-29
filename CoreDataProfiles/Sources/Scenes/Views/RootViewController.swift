@@ -54,6 +54,7 @@ class RootViewController: UIViewController {
         
         // MARK: Table View Setup
         setupDataSource()
+        setupDelegate()
         setupTableCells()
     }
     
@@ -91,6 +92,10 @@ class RootViewController: UIViewController {
     
     private func setupDataSource() {
         profilesTableView.dataSource = self
+    }
+    
+    private func setupDelegate() {
+        profilesTableView.delegate = self
     }
     
     private func setupTableCells() {
@@ -162,12 +167,14 @@ extension RootViewController: UITableViewDataSource {
 
 // MARK: - Обработка нажатия на ячейку
 
-extension RootViewController {
+extension RootViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let profile = presenter.profiles[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
-
-        //changeViewController(with: profile)
+        
+        let profileViewController = ProfileViewController()
+        profileViewController.presenter.profile = profile
+        navigationController?.pushViewController(profileViewController, animated: true)
     }
 }
 

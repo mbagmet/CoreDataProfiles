@@ -25,6 +25,7 @@
 		D90AC9132842724900A75C4D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D90AC9122842724900A75C4D /* SnapKit */; };
 		D90AC9162842888100A75C4D /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC9152842888100A75C4D /* DataProvider.swift */; };
 		D90AC91928428FCA00A75C4D /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC91828428FCA00A75C4D /* DataProviderProtocol.swift */; };
+		D955E61E28439EA80072774A /* GenderPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955E61D28439EA80072774A /* GenderPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		D90AC90F284270EA00A75C4D /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		D90AC9152842888100A75C4D /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		D90AC91828428FCA00A75C4D /* DataProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderProtocol.swift; sourceTree = "<group>"; };
+		D955E61D28439EA80072774A /* GenderPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,9 +123,10 @@
 		D90AC8F928424B9D00A75C4D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D90AC9042842519B00A75C4D /* Protocols */,
 				D90AC8E32842445100A75C4D /* RootViewController.swift */,
 				D90AC90228424FB900A75C4D /* ProfileViewController.swift */,
-				D90AC9042842519B00A75C4D /* Protocols */,
+				D955E61C284394250072774A /* Helpers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -131,9 +134,9 @@
 		D90AC8FA28424BA700A75C4D /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				D90AC90928425E0A00A75C4D /* Protocols */,
 				D90AC8FE28424F1800A75C4D /* RootPresenter.swift */,
 				D90AC90028424F7D00A75C4D /* ProfilePresenter.swift */,
-				D90AC90928425E0A00A75C4D /* Protocols */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -188,6 +191,14 @@
 				D90AC91828428FCA00A75C4D /* DataProviderProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D955E61C284394250072774A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D955E61D28439EA80072774A /* GenderPickerView.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +286,7 @@
 				D90AC8E42842445100A75C4D /* RootViewController.swift in Sources */,
 				D90AC90328424FB900A75C4D /* ProfileViewController.swift in Sources */,
 				D90AC906284251B800A75C4D /* RootPresenterDelegate.swift in Sources */,
+				D955E61E28439EA80072774A /* GenderPickerView.swift in Sources */,
 				D90AC8E02842445100A75C4D /* AppDelegate.swift in Sources */,
 				D90AC910284270EA00A75C4D /* UIColor+Ext.swift in Sources */,
 				D90AC91928428FCA00A75C4D /* DataProviderProtocol.swift in Sources */,
