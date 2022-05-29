@@ -13,8 +13,6 @@ class DataProvider: DataProviderProtocol {
     
     // MARK: - Properties
     
-    var profiles: [NSManagedObject]?
-    
     private let appDelegate = UIApplication.shared.delegate as? AppDelegate
     private lazy var managedContext = appDelegate?.persistentContainer.viewContext
     
@@ -35,7 +33,6 @@ class DataProvider: DataProviderProtocol {
 
         do {
             try managedContext.save()
-            profiles?.append(profile)
             completion()
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
@@ -43,12 +40,11 @@ class DataProvider: DataProviderProtocol {
     }
     
     // MARK: - Delete Profile
-    func deleteProfile(profile: NSManagedObject, index: Int, completion: @escaping () -> ()) {
+    func deleteProfile(profile: NSManagedObject, completion: @escaping () -> ()) {
         managedContext?.delete(profile)
 
         do {
             try managedContext?.save()
-            profiles?.remove(at: index)
             completion()
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
@@ -57,6 +53,11 @@ class DataProvider: DataProviderProtocol {
     
     // MARK: - Update Profile
     func updateProfile(profile: NSManagedObject, completion: @escaping () -> ()) {
-        // TODO
+        do {
+            try managedContext?.save()
+            completion()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
     }
 }

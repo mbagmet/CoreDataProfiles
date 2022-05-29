@@ -8,5 +8,6 @@
 import Foundation
 
 protocol ProfilePresenterDelegate: AnyObject {
-    // TODO
+    func showProfile(profile: Profile)
+    func resetNeedToUpload()
 }
