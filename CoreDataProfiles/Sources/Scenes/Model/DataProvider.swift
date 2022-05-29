@@ -14,20 +14,13 @@ class DataProvider: DataProviderProtocol {
     // MARK: - Properties
     
     var profiles: [NSManagedObject]?
-    var profile: NSManagedObject?
     
     private let appDelegate = UIApplication.shared.delegate as? AppDelegate
     private lazy var managedContext = appDelegate?.persistentContainer.viewContext
     
-    // MARK: - Show Profiles
-    func felchProfilesList() {
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Profile")
-        
-        do {
-            profiles = try managedContext?.fetch(fetchRequest)
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
+    // MARK: - Felch profiles from NSManagedObject to Profile
+    func felchProfiles() -> [Profile]? {
+        try? managedContext?.fetch(Profile.fetchRequest())
     }
     
     // MARK: - Add Profile

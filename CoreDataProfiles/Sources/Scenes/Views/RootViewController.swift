@@ -42,7 +42,7 @@ class RootViewController: UIViewController {
         
         // MARK: Presenter setup
         presenter.setViewDelegate(delegate: self)
-        presenter.setupProfiles()
+        presenter.updateProfiles()
         
         // MARK: Navigaiton Setup
         setupNavigation()
