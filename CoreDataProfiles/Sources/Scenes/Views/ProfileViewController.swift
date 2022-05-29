@@ -24,17 +24,21 @@ class ProfileViewController: UIViewController {
     private lazy var mainStackView = createStackView(axis: .vertical, distribution: .equalCentering, alignment: .center)
     
     // MARK: Profile Image
+    
     lazy var profileImageView: UIImageView = {
         var imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = .tertiarySystemFill
+        imageView.contentMode = .scaleAspectFill
+        imageView.tintColor = .secondarySystemBackground
         imageView.image = UIImage(systemName: "person.fill")
         
         imageView.clipsToBounds = true
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = Metric.imageSize / 2
         imageView.layer.borderWidth = Metric.imageBorderWidth
-        imageView.layer.borderColor = UIColor.tertiarySystemFill.cgColor
+        imageView.layer.borderColor = UIColor.secondarySystemBackground.cgColor
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
+        imageView.addGestureRecognizer(tapGestureRecognizer)
 
         return imageView
     }()
@@ -77,6 +81,10 @@ class ProfileViewController: UIViewController {
     private lazy var lineSeparatorThree = makeLineSeparator()
 
     // MARK: - Lifecycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        needToUploadImage = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -176,7 +184,7 @@ class ProfileViewController: UIViewController {
     
     private func createIcons(imageName: String) -> UIImageView {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(systemName: imageName, withConfiguration: Metric.iconConfiguration)
         imageView.tintColor = .systemGray
         imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
@@ -231,6 +239,18 @@ class ProfileViewController: UIViewController {
             $0.isUserInteractionEnabled = active
         }
     }
+    
+    private func showPhotoGallery() {
+        let imagePickerViewController = UIImagePickerController()
+        imagePickerViewController.sourceType = .photoLibrary
+        imagePickerViewController.delegate = self
+        present(imagePickerViewController, animated: true)
+    }
+    
+    private func saveImage(image: UIImage) {
+        profileImageView.image = image
+        
+    }
 }
 
 // MARK: - Presenter Delegate
@@ -276,6 +296,24 @@ extension ProfileViewController {
 
     @objc func cancelGender() {
         genderTextField.endEditing(false)
+    }
+    
+    @objc func chooseImage(sender: UITapGestureRecognizer) {
+        showPhotoGallery()
+        needToUploadImage = true
+    }
+}
+
+// MARK: - ImagePicker Delegate
+
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        
+        guard let image = info[.originalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        saveImage(image: image)
     }
 }
 
