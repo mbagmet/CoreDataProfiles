@@ -15,6 +15,8 @@ class ProfileViewController: UIViewController {
     
     var presenter = ProfilePresenter()
     
+    lazy var needToUploadImage = false
+    
     // MARK: - Views
     
     private lazy var editButton = UIBarButtonItem(title: Strings.editButton, style: .plain, target: self, action: #selector(editButtonAction))
@@ -22,7 +24,7 @@ class ProfileViewController: UIViewController {
     private lazy var mainStackView = createStackView(axis: .vertical, distribution: .equalCentering, alignment: .center)
     
     // MARK: Profile Image
-    private lazy var profileImageView: UIImageView = {
+    lazy var profileImageView: UIImageView = {
         var imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.tintColor = .tertiarySystemFill
@@ -52,10 +54,10 @@ class ProfileViewController: UIViewController {
     private lazy var genderImage = createIcons(imageName: "heart")
     
     // MARK: Name
-    private lazy var nameTextField = createTextFields(placeholder: Strings.nameTextFieldPlacegolder)
+    lazy var nameTextField = createTextFields(placeholder: Strings.nameTextFieldPlacegolder)
     
     // MARK: Birthday
-    private lazy var birthdayDatePicker: UIDatePicker = {
+    lazy var birthdayDatePicker: UIDatePicker = {
         var datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
         datePicker.preferredDatePickerStyle = .compact
@@ -65,7 +67,7 @@ class ProfileViewController: UIViewController {
     }()
     
     // MARK: Gender
-    private lazy var genderTextField = createTextFields(placeholder: Strings.genderTextFieldPlacegolder)
+    lazy var genderTextField = createTextFields(placeholder: Strings.genderTextFieldPlacegolder)
     private lazy var genderToolar = createGenderToolbar()
     private lazy var genderPicker = GenderPickerView()
     
@@ -81,6 +83,7 @@ class ProfileViewController: UIViewController {
         
         // MARK: Presenter setup
         presenter.setViewDelegate(delegate: self)
+        presenter.getProfile()
 
         // MARK: View Setup
         setupEditButton()
@@ -232,7 +235,21 @@ class ProfileViewController: UIViewController {
 
 // MARK: - Presenter Delegate
 extension ProfileViewController: ProfilePresenterDelegate {
+    func showProfile(profile: Profile) {
+        nameTextField.text = profile.name
+        genderTextField.text = profile.gender
+        
+        if let birthday = profile.birthday {
+            birthdayDatePicker.date = birthday
+        }
+        if let imageData = profile.image {
+            profileImageView.image = UIImage(data: imageData)
+        }
+    }
     
+    func resetNeedToUpload() {
+        needToUploadImage = false
+    }
 }
 
 // MARK: - User Actions

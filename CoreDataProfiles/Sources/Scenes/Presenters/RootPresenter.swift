@@ -36,8 +36,8 @@ class RootPresenter: RootPresenterProtocol {
     }
     
     func deleteProfile(index: Int, completion: @escaping () -> ()) {
-        guard let profile = dataProvider.profiles?[index] else { return }
-        dataProvider.deleteProfile(profile: profile, index: index) {
+        guard let profile = dataProvider.felchProfiles()?[index] else { return }
+        dataProvider.deleteProfile(profile: profile) {
             self.updateProfiles()
             completion()
         }

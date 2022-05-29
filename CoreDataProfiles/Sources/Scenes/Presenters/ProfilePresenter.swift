@@ -21,8 +21,30 @@ class ProfilePresenter: ProfilePresenterProtocol {
         self.delegate = delegate
     }
     
+    func getProfile() {
+        guard let profile = profile else { return }
+        delegate?.showProfile(profile: profile)
+    }
+    
     // MARK: - Functions
     func updateProfile() {
+        guard
+            let profile = profile,
+            let view = delegate as? ProfileViewController
+        else {
+            return
+        }
+        profile.name = view.nameTextField.text
+        profile.gender = view.genderTextField.text
+        profile.birthday = view.birthdayDatePicker.date
         
+        if view.needToUploadImage {
+            profile.image = view.profileImageView.image?.jpegData(compressionQuality: 1)
+            delegate?.resetNeedToUpload()
+        }
+        
+        dataProvider.updateProfile(profile: profile) {
+            self.getProfile()
+        }
     }
 }

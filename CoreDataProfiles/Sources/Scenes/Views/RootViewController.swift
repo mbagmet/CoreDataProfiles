@@ -37,6 +37,10 @@ class RootViewController: UIViewController {
 
     // MARK: - Lifecycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        profilesTableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
