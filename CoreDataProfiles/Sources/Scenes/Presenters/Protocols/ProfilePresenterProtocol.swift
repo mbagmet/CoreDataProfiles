@@ -6,11 +6,10 @@
 //
 
 import Foundation
-import CoreData
 
 protocol ProfilePresenterProtocol {
     var delegate: ProfilePresenterDelegate? { get set }
-    var profile: NSManagedObject? { get }
+    var profile: Profile? { get }
     var dataProvider: DataProvider { get set }
     
     func setViewDelegate(delegate: ProfilePresenterDelegate)
