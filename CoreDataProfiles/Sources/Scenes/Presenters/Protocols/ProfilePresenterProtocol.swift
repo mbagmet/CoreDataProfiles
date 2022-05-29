@@ -14,4 +14,5 @@ protocol ProfilePresenterProtocol {
     var dataProvider: DataProvider { get set }
     
     func setViewDelegate(delegate: ProfilePresenterDelegate)
+    func updateProfile()
 }

@@ -23,4 +23,7 @@ class ProfilePresenter: ProfilePresenterProtocol {
     }
     
     // MARK: - Functions
+    func updateProfile() {
+        
+    }
 }
