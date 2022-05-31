@@ -43,7 +43,7 @@ class ProfilePresenter: ProfilePresenterProtocol {
             delegate?.resetNeedToUpload()
         }
         
-        dataProvider.updateProfile(profile: profile) {
+        dataProvider.updateProfile(profile: profile) { [unowned self] in
             self.getProfile()
         }
     }
