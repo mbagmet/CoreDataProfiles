@@ -9,23 +9,46 @@
 /* Begin PBXBuildFile section */
 		D90AC8E02842445100A75C4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC8DF2842445100A75C4D /* AppDelegate.swift */; };
 		D90AC8E22842445100A75C4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC8E12842445100A75C4D /* SceneDelegate.swift */; };
-		D90AC8E42842445100A75C4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC8E32842445100A75C4D /* ViewController.swift */; };
+		D90AC8E42842445100A75C4D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC8E32842445100A75C4D /* RootViewController.swift */; };
 		D90AC8E72842445100A75C4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90AC8E52842445100A75C4D /* Main.storyboard */; };
 		D90AC8EA2842445100A75C4D /* CoreDataProfiles.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D90AC8E82842445100A75C4D /* CoreDataProfiles.xcdatamodeld */; };
 		D90AC8EC2842445200A75C4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90AC8EB2842445200A75C4D /* Assets.xcassets */; };
 		D90AC8EF2842445200A75C4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90AC8ED2842445200A75C4D /* LaunchScreen.storyboard */; };
+		D90AC8FF28424F1800A75C4D /* RootPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC8FE28424F1800A75C4D /* RootPresenter.swift */; };
+		D90AC90128424F7D00A75C4D /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC90028424F7D00A75C4D /* ProfilePresenter.swift */; };
+		D90AC90328424FB900A75C4D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC90228424FB900A75C4D /* ProfileViewController.swift */; };
+		D90AC906284251B800A75C4D /* RootPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC905284251B800A75C4D /* RootPresenterDelegate.swift */; };
+		D90AC9082842520400A75C4D /* ProfilePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC9072842520400A75C4D /* ProfilePresenterDelegate.swift */; };
+		D90AC90B28425E2F00A75C4D /* RootPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC90A28425E2F00A75C4D /* RootPresenterProtocol.swift */; };
+		D90AC90D28426D2800A75C4D /* ProfilePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC90C28426D2800A75C4D /* ProfilePresenterProtocol.swift */; };
+		D90AC910284270EA00A75C4D /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC90F284270EA00A75C4D /* UIColor+Ext.swift */; };
+		D90AC9132842724900A75C4D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D90AC9122842724900A75C4D /* SnapKit */; };
+		D90AC9162842888100A75C4D /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC9152842888100A75C4D /* DataProvider.swift */; };
+		D90AC91928428FCA00A75C4D /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC91828428FCA00A75C4D /* DataProviderProtocol.swift */; };
+		D955E61E28439EA80072774A /* GenderPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955E61D28439EA80072774A /* GenderPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D90AC8DC2842445100A75C4D /* CoreDataProfiles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataProfiles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90AC8DF2842445100A75C4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D90AC8E12842445100A75C4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D90AC8E32842445100A75C4D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D90AC8E32842445100A75C4D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		D90AC8E62842445100A75C4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D90AC8E92842445100A75C4D /* CoreDataProfiles.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataProfiles.xcdatamodel; sourceTree = "<group>"; };
 		D90AC8EB2842445200A75C4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D90AC8EE2842445200A75C4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D90AC8F02842445200A75C4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D90AC8FE28424F1800A75C4D /* RootPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenter.swift; sourceTree = "<group>"; };
+		D90AC90028424F7D00A75C4D /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		D90AC90228424FB900A75C4D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D90AC905284251B800A75C4D /* RootPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenterDelegate.swift; sourceTree = "<group>"; };
+		D90AC9072842520400A75C4D /* ProfilePresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenterDelegate.swift; sourceTree = "<group>"; };
+		D90AC90A28425E2F00A75C4D /* RootPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenterProtocol.swift; sourceTree = "<group>"; };
+		D90AC90C28426D2800A75C4D /* ProfilePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenterProtocol.swift; sourceTree = "<group>"; };
+		D90AC90F284270EA00A75C4D /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		D90AC9152842888100A75C4D /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		D90AC91828428FCA00A75C4D /* DataProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderProtocol.swift; sourceTree = "<group>"; };
+		D955E61D28439EA80072774A /* GenderPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D90AC9132842724900A75C4D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,16 +82,123 @@
 		D90AC8DE2842445100A75C4D /* CoreDataProfiles */ = {
 			isa = PBXGroup;
 			children = (
-				D90AC8DF2842445100A75C4D /* AppDelegate.swift */,
-				D90AC8E12842445100A75C4D /* SceneDelegate.swift */,
-				D90AC8E32842445100A75C4D /* ViewController.swift */,
+				D90AC8F728424A5000A75C4D /* Sources */,
+				D90AC8F628424A4700A75C4D /* Resources */,
+				D90AC8E82842445100A75C4D /* CoreDataProfiles.xcdatamodeld */,
+			);
+			path = CoreDataProfiles;
+			sourceTree = "<group>";
+		};
+		D90AC8F628424A4700A75C4D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				D90AC8E52842445100A75C4D /* Main.storyboard */,
 				D90AC8EB2842445200A75C4D /* Assets.xcassets */,
 				D90AC8ED2842445200A75C4D /* LaunchScreen.storyboard */,
 				D90AC8F02842445200A75C4D /* Info.plist */,
-				D90AC8E82842445100A75C4D /* CoreDataProfiles.xcdatamodeld */,
 			);
-			path = CoreDataProfiles;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D90AC8F728424A5000A75C4D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D90AC8FB28424BB200A75C4D /* App */,
+				D90AC8F828424B8100A75C4D /* Scenes */,
+				D90AC90E284270AC00A75C4D /* Extensions */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		D90AC8F828424B8100A75C4D /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				D90AC8FA28424BA700A75C4D /* Presenters */,
+				D90AC8F928424B9D00A75C4D /* Views */,
+				D90AC9142842882900A75C4D /* Model */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		D90AC8F928424B9D00A75C4D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D90AC9042842519B00A75C4D /* Protocols */,
+				D90AC8E32842445100A75C4D /* RootViewController.swift */,
+				D90AC90228424FB900A75C4D /* ProfileViewController.swift */,
+				D955E61C284394250072774A /* Helpers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D90AC8FA28424BA700A75C4D /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				D90AC90928425E0A00A75C4D /* Protocols */,
+				D90AC8FE28424F1800A75C4D /* RootPresenter.swift */,
+				D90AC90028424F7D00A75C4D /* ProfilePresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		D90AC8FB28424BB200A75C4D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D90AC8DF2842445100A75C4D /* AppDelegate.swift */,
+				D90AC8E12842445100A75C4D /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D90AC9042842519B00A75C4D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D90AC905284251B800A75C4D /* RootPresenterDelegate.swift */,
+				D90AC9072842520400A75C4D /* ProfilePresenterDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D90AC90928425E0A00A75C4D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D90AC90A28425E2F00A75C4D /* RootPresenterProtocol.swift */,
+				D90AC90C28426D2800A75C4D /* ProfilePresenterProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D90AC90E284270AC00A75C4D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D90AC90F284270EA00A75C4D /* UIColor+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D90AC9142842882900A75C4D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D90AC9152842888100A75C4D /* DataProvider.swift */,
+				D90AC91728428FAD00A75C4D /* Protocols */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D90AC91728428FAD00A75C4D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D90AC91828428FCA00A75C4D /* DataProviderProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D955E61C284394250072774A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D955E61D28439EA80072774A /* GenderPickerView.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +217,9 @@
 			dependencies = (
 			);
 			name = CoreDataProfiles;
+			packageProductDependencies = (
+				D90AC9122842724900A75C4D /* SnapKit */,
+			);
 			productName = CoreDataProfiles;
 			productReference = D90AC8DC2842445100A75C4D /* CoreDataProfiles.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +248,9 @@
 				Base,
 			);
 			mainGroup = D90AC8D32842445100A75C4D;
+			packageReferences = (
+				D90AC9112842724900A75C4D /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = D90AC8DD2842445100A75C4D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,10 +278,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D90AC90B28425E2F00A75C4D /* RootPresenterProtocol.swift in Sources */,
+				D90AC9082842520400A75C4D /* ProfilePresenterDelegate.swift in Sources */,
+				D90AC8FF28424F1800A75C4D /* RootPresenter.swift in Sources */,
 				D90AC8EA2842445100A75C4D /* CoreDataProfiles.xcdatamodeld in Sources */,
-				D90AC8E42842445100A75C4D /* ViewController.swift in Sources */,
+				D90AC90128424F7D00A75C4D /* ProfilePresenter.swift in Sources */,
+				D90AC8E42842445100A75C4D /* RootViewController.swift in Sources */,
+				D90AC90328424FB900A75C4D /* ProfileViewController.swift in Sources */,
+				D90AC906284251B800A75C4D /* RootPresenterDelegate.swift in Sources */,
+				D955E61E28439EA80072774A /* GenderPickerView.swift in Sources */,
 				D90AC8E02842445100A75C4D /* AppDelegate.swift in Sources */,
+				D90AC910284270EA00A75C4D /* UIColor+Ext.swift in Sources */,
+				D90AC91928428FCA00A75C4D /* DataProviderProtocol.swift in Sources */,
+				D90AC90D28426D2800A75C4D /* ProfilePresenterProtocol.swift in Sources */,
 				D90AC8E22842445100A75C4D /* SceneDelegate.swift in Sources */,
+				D90AC9162842888100A75C4D /* DataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +441,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XK82N983EZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CoreDataProfiles/Info.plist;
+				INFOPLIST_FILE = CoreDataProfiles/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -321,7 +469,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XK82N983EZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CoreDataProfiles/Info.plist;
+				INFOPLIST_FILE = CoreDataProfiles/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -362,6 +510,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D90AC9112842724900A75C4D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D90AC9122842724900A75C4D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D90AC9112842724900A75C4D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D90AC8E82842445100A75C4D /* CoreDataProfiles.xcdatamodeld */ = {
