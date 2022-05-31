@@ -5,7 +5,6 @@
 //  Created by Михаил Багмет on 28.05.2022.
 //
 
-import Foundation
 import CoreData
 
 protocol DataProviderProtocol {

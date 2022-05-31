@@ -19,7 +19,10 @@ class ProfileViewController: UIViewController {
     
     // MARK: - Views
     
-    private lazy var editButton = UIBarButtonItem(title: Strings.editButton, style: .plain, target: self, action: #selector(editButtonAction))
+    private lazy var editButton = UIBarButtonItem(title: Strings.editButton,
+                                                  style: .plain,
+                                                  target: self,
+                                                  action: #selector(editButtonAction))
     
     private lazy var mainStackView = createStackView(axis: .vertical, distribution: .equalCentering, alignment: .center)
     
@@ -278,15 +281,13 @@ extension ProfileViewController {
     @objc func editButtonAction() {
         if self.isEditing {
             self.setEditing(false, animated: true)
-            toogleUserIterations(active: self.isEditing)
             editButton.title = Strings.editButton
-
             presenter.updateProfile()
         } else {
             self.setEditing(true, animated: true)
-            toogleUserIterations(active: self.isEditing)
             editButton.title = Strings.saveButton
         }
+        toogleUserIterations(active: self.isEditing)
     }
     
     @objc func selectGender() {
